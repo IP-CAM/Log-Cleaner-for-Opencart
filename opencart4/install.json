@@ -1,0 +1,8 @@
+{
+	"name": "OpenCart Log Cleaner",
+	"description": "This extension cleans OpenCart logs if they are larger than the configured size.",
+	"code": "log_cleaner",
+	"version": "1.0.0",
+	"author": "Szabó Levente",
+	"link": "https://levente.net"
+}
