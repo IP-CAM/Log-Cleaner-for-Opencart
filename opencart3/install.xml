@@ -14,7 +14,7 @@
         if ($this->config->get("module_log_cleaner_status")) {
             $chance = $this->config->get("module_log_cleaner_chance");
             $size = $this->config->get("module_log_cleaner_size");
-            $this->registry->set('log_cleaner', new LogCleaner($chance, $size));
+            $this->registry->set('log_cleaner', new LogCleaner((int)$chance, (int)$size));
             $this->log_cleaner->clean();
         }]]>
             </add>
