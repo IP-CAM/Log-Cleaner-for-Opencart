@@ -6,7 +6,7 @@ $_['heading_title']    = 'Log Cleaner';
 $_['text_extension']   = 'Extensions';
 $_['text_success']     = 'Success: You have modified Log Cleaner module!';
 $_['text_edit']        = 'Edit Log Cleaner Module';
-$_['text_log_cleaner_info']        = 'Warning: The Module will clean all .log & .txt files in the OpenCart\'s storage/log folder!';
+$_['text_log_cleaner_info']        = 'Warning: The Module will clean all .log & .txt files in the OpenCart\'s storage/logs folder!';
 
 // Entry
 $_['entry_status']     = 'Status';
