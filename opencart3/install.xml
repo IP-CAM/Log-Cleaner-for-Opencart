@@ -1,0 +1,23 @@
+<modification>
+    <name>OpenCart Log Cleaner</name>
+    <code>log_cleaner</code>
+    <version>1.0.0</version>
+    <author>Szabó Levente</author>
+    <link>https://levente.net</link>
+    <file path="catalog/controller/startup/startup.php">
+        <operation error="log">
+            <search>
+                <![CDATA[$this->registry->set('encryption', new Encryption());]]>
+            </search>
+            <add position="after">
+                <![CDATA[
+        if ($this->config->get("module_log_cleaner_status")) {
+            $chance = $this->config->get("module_log_cleaner_chance");
+            $size = $this->config->get("module_log_cleaner_size");
+            $this->registry->set('log_cleaner', new LogCleaner($chance, $size));
+            $this->log_cleaner->clean();
+        }]]>
+            </add>
+        </operation>
+    </file>
+</modification>
