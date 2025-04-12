@@ -1,0 +1,27 @@
+<modification>
+    <name>OpenCart Log Cleaner Simple</name>
+    <code>log_cleaner_simple</code>
+    <version>1.0.0</version>
+    <author>Szabó Levente</author>
+    <link>https://levente.net</link>
+    <file path="system/library/log.php">
+        <operation error="log">
+            <search>
+                <![CDATA[public function __construct(string $filename) {]]>
+            </search>
+            <add position="after">
+                <![CDATA[        if (file_exists(DIR_LOGS . $filename) && filesize(DIR_LOGS . $filename) > ((defined('MAX_LOG_SIZE') ? MAX_LOG_SIZE : 50) * 1024 * 1024)) {
+            file_put_contents(DIR_LOGS . $filename, '');
+        }]]>
+            </add>
+        </operation>
+        <operation error="log">
+            <search>
+                <![CDATA[namespace Opencart\System\Library;]]>
+            </search>
+            <add position="replace">
+                <![CDATA[namespace Opencart\System\Library\Extension\Ocmod;]]>
+            </add>
+        </operation>
+    </file>
+</modification>
